@@ -138,13 +138,7 @@ new_interrupt proc far
    
    popa
    popf
-   sti
-
-   push ax
-   mov al, 20h
-   out 20h, al     
-   pop ax
-      
+   sti     
    iret
 new_interrupt endp        
 
