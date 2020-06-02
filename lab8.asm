@@ -19,7 +19,6 @@ accessError      db "IO Error: access error!$"
 IOError          db "IO Error!$" 
 maxSizeOfWordError db "Error: word that you have entered is bigger than max size of word!$"
 invalidIdentifierError db "IO Error: invalid identifier$"
-hello_message         db "Enter anything to start: $"  
 message_opening_file         db "Try to open file...!$"
 message_opened_file      db "File has been opened!$" 
 fileNotExistError    db 	"Error: empty command line!$" 
@@ -408,13 +407,7 @@ _open_file:
 	
 		
 	mov dx, offset message_opened_file   
-	call outputString 
-	
-	mov dx, offset hello_message   
-	call outputString 
-	
-	mov dx, offset string
-	call inputString      
+	call outputString     
     
 reading:     
     call read_file
